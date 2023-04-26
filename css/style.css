@@ -1,0 +1,51 @@
+body {
+    font-family: 'Oxygen', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Raleway', sans-serif;;
+}
+.container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-header {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.rocket-image {
+    width: 140px;
+}
+
+.rocket-image img {
+    width: 100%;
+}
+
+header h2 {
+    margin: 50px 0 0 0;
+    text-align: center;
+}
+
+.game-container {
+
+    display: flex;
+    flex-direction: column;
+}
+#submit-button {
+    padding: 5px;
+    background-color: aqua;
+}
+
+#output-div {
+    background-color:lightblue;
+    padding: 200px 100px;
+    text-align: center;
+
+}
