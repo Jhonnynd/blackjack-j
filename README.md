@@ -1,6 +1,7 @@
 # Blackjack Game
 
 This is a simple implementation of the popular card game Blackjack. The game is built using HTML, CSS, and JavaScript.
+Click [here](https://jhonnynd.github.io/blackjack-j/) for a live demo.
 
 ## How to Play
 
