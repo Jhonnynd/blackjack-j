@@ -39,20 +39,20 @@ const shuffleDeck = () => { // shuffle the deck
     }
 }
 
-const grabACard = () => { //grab a card, whether it is for the player or the dealer
+const grabACard = () => { // grab a card, whether it is for the player or the dealer
     let randomCard = Math.floor(Math.random() * deck.length);
     let card = deck[randomCard].split("-");
-    if (card[0] === "J" || card[0] === "Q" || card[0] === "K") {
+    if (card[0] === "J" || card[0] === "Q" || card[0] === "K") { // puts value to suits
         card[0] = 10;
-    } else if (card[0] === "A") {
+    } else if (card[0] === "A") { // puts value to ace
         card[0] = 11;
     }
     deck.splice(randomCard, 1);
-    return card;
+    return card; // returns the card
 }
 
 const dealerLogic = () => { // Logic of the dealer
-    if (start === true) { //checks if the game restarted already
+    if (start === true) { // checks if the game is still ongoing
         let random = Math.floor(Math.random() * 2); // to ramdomize its move
         if (random === 0 || dealerSum < 17) {
             output.innerHTML += `<p>Dealer chose to hit.</p>`;
@@ -104,11 +104,11 @@ submit.addEventListener("click", function () { // check input
     if (inputField.value.toLowerCase() === "start") {
         startGame();
     }
-    else if (inputField.value.toLowerCase() === "hit") {
+    else if (inputField.value.toLowerCase() === "hit") { // if the player chooses to hit
         if (!start) { // checks if the game started
             alert("you need to write start in order to start the game!")
         } else {
-            if (playerSum < 21) {
+            if (playerSum < 21) { 
                 let playerCard = grabACard();
                 output.innerHTML += `<p>you chose to hit </p>`;
                 output.innerHTML += `<p>you were handed a ${playerCard[0]} of ${playerCard[1]} </p>`;
@@ -119,7 +119,7 @@ submit.addEventListener("click", function () { // check input
             }
         }
     }
-    else if (inputField.value.toLowerCase() === "stand") {
+    else if (inputField.value.toLowerCase() === "stand") { // if the player chooses to stand
         if (!start) { // checks if the game started
             alert("you need to write start in order to start the game!")
         } else {
