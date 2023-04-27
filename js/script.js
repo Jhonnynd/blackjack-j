@@ -12,10 +12,10 @@ let start = false;
 
 checkGameStatus = () => { // check the game constantly, everytime it's called
     if (playerSum >= 21) {
-        output.innerHTML += `<p>you lost! </p>`;
+        output.innerHTML += `<p><strong>you lost!</strong></p>`;
         restartGame();
     } else if (dealerSum >= 21) {
-        output.innerHTML += `<p>Dealer lost!</p>`;
+        output.innerHTML += `<p><strong>Dealer lost!</strong></p>`;
         restartGame();
     }
 }
@@ -55,19 +55,19 @@ const dealerLogic = () => { // Logic of the dealer
     if (start === true) { // checks if the game is still ongoing
         let random = Math.floor(Math.random() * 2); // to ramdomize its move
         if (random === 0 || dealerSum < 17) {
-            output.innerHTML += `<p>Dealer chose to hit.</p>`;
+            output.innerHTML += `<p><strong>Dealer chose to hit.</strong></p>`;
             let dealerCard = grabACard();
             output.innerHTML += `<p>Dealer was handed a ${dealerCard[0]} of ${dealerCard[1]}</p>`;
             dealerSum += Number(dealerCard[0]);
             checkGameStatus();
         } else {
-            output.innerHTML += `<p>Dealer chose to stand.</p>`;
+            output.innerHTML += `<p><strong>Dealer chose to stand.</strong></p>`;
         }
     }
 }
 
 const restartGame = () => { // used to restart the game
-    output.innerHTML += `<p>Write "start" to restart the game!</p>`;
+    output.innerHTML += `<p><strong>Write "start" to restart the game!</strong></p>`;
     start = false;
     playerSum = 0;
     dealerSum = 0;
@@ -75,8 +75,8 @@ const restartGame = () => { // used to restart the game
 }
 
 const startGame = () => { // function called when the game starts
-    output.innerHTML += `<p>the game starts!</p>`
     output.innerHTML = "";
+    output.innerHTML += `<p><strong>The game starts!</strong></p>`;
     start = true;
     inputField.value = "";
     let playerCard1 = grabACard(); // first card the player gets
@@ -91,11 +91,12 @@ const startGame = () => { // function called when the game starts
     let dealerCard2 = grabACard(); // second card the dealer gets
     output.innerHTML += `<p>Dealer was handed a ${dealerCard2[0]} of ${dealerCard2[1]}</p>`;
     dealerSum += Number(dealerCard2[0]);
+    output.innerHTML += `<p><strong>Write 'hit' to draw a card, or 'stand' to stand.</strong></p>`;
     checkGameStatus();
 }
 
 const stand = () => { // Player choose to stand
-    output.innerHTML += `<p>You chose to stand </p>`;
+    output.innerHTML += `<p><strong>You chose to stand </strong></p>`;
     dealerLogic();
     checkGameStatus();
 }
@@ -110,7 +111,7 @@ submit.addEventListener("click", function () { // check input
         } else {
             if (playerSum < 21) { 
                 let playerCard = grabACard();
-                output.innerHTML += `<p>you chose to hit </p>`;
+                output.innerHTML += `<p><strong>you chose to hit</strong></p>`;
                 output.innerHTML += `<p>you were handed a ${playerCard[0]} of ${playerCard[1]} </p>`;
                 playerSum += Number(playerCard[0]);
                 inputField.value = "";

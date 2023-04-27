@@ -1,11 +1,18 @@
 body {
-    font-family: 'Oxygen', sans-serif;
+font-family: 'Oxygen', sans-serif;
 font-family: 'Poppins', sans-serif;
 font-family: 'Raleway', sans-serif;;
 }
 .container {
     width: 50%;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 620px) {
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
 }
 
 header {
@@ -47,4 +54,9 @@ header h2 {
     padding: 35px 100px;
     text-align: center;
     margin-bottom: 15px;
+}
+@media screen and (max-width: 620px) {
+    #output-div {
+        padding: 35px 5px;
+    }
 }
