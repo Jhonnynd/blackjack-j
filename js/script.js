@@ -106,7 +106,11 @@ const stand = () => { // Player choose to stand
 
 submit.addEventListener("click", function () { // check input
     if (inputField.value.toLowerCase() === "start") {
-        startGame();
+        if (!start) {
+            startGame();
+        } else {
+            alert("A game is already in progress!")
+        }
     }
     else if (inputField.value.toLowerCase() === "hit") { // if the player chooses to hit
         if (!start) { // checks if the game started
