@@ -72,6 +72,9 @@ const restartGame = () => { // used to restart the game
     playerSum = 0;
     dealerSum = 0;
     inputField.value = "";
+    deck = [];
+    buildDeck(); 
+    shuffleDeck();
 }
 
 const startGame = () => { // function called when the game starts
